@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prof. Ahmed F. Zobaa — Academic Profile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<style>
+:root{
+  --maroon:#6B1F2A;--maroon2:#8B2635;--maroon-l:#F5E8EA;
+  --navy:#1B3A6B;--navy-l:#E6EEF5;
+  --gold:#C97D0A;--gold-l:#FEF3DC;
+  --green:#1A7A4A;--green-l:#E6F5EE;
+  --g50:#F8FAFC;--g100:#F1F5F9;--g200:#E2E8F0;
+  --g500:#64748B;--g700:#374151;--g900:#0F172A;
+  --text:#1E293B;--soft:#64748B;--white:#FFFFFF;
+  --shadow:0 1px 3px rgba(0,0,0,.08),0 4px 12px rgba(0,0,0,.05);
+  --shadow-md:0 4px 20px rgba(0,0,0,.10);--radius:10px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:var(--g50);color:var(--text);line-height:1.6;font-size:15px}
+a{color:var(--navy);text-decoration:none}a:hover{text-decoration:underline}
+/* TOP BAR */
+.top-bar{background:var(--maroon);padding:10px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.3)}
+.top-bar .inner{max-width:1100px;margin:auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+.top-bar .logo{display:flex;align-items:center;gap:10px;color:white}
+.top-bar .logo .ic{background:var(--gold);width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:10px;color:white}
+.top-bar .logo span{font-size:16px;font-weight:600}
+.top-bar nav{display:flex;gap:6px}
+.top-bar nav a{color:rgba(255,255,255,.75);font-size:13px;padding:5px 10px;border-radius:6px;transition:.2s;cursor:pointer}
+.top-bar nav a:hover,.top-bar nav a.active{background:rgba(255,255,255,.15);color:white;text-decoration:none}
+/* HERO */
+.hero{background:linear-gradient(135deg,#3D0F18 0%,var(--maroon) 50%,#1B3A6B 100%);padding:40px 0 0;color:white}
+.hero .inner{max-width:1100px;margin:auto;padding:0 24px;display:flex;gap:28px;align-items:flex-end;flex-wrap:wrap}
+.avatar{width:110px;height:110px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:white;border:4px solid rgba(255,255,255,.25);flex-shrink:0}
+.hero-info{flex:1;padding-bottom:24px}
+.hero-info h1{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;line-height:1.2;margin-bottom:6px}
+.hero-info .subtitle{font-size:15px;opacity:.88;margin-bottom:4px}
+.hero-info .affil{font-size:13px;opacity:.7;margin-bottom:14px}
+.badges{display:flex;flex-wrap:wrap;gap:8px}
+.badge{display:inline-flex;align-items:center;gap:5px;font-size:12px;padding:4px 10px;border-radius:20px;font-weight:500;white-space:nowrap}
+.badge.red{background:rgba(139,38,53,.35);color:#FFCCD0;border:1px solid rgba(139,38,53,.4)}
+.badge.gold{background:rgba(201,125,10,.3);color:#FFD07A;border:1px solid rgba(201,125,10,.4)}
+.badge.gray{background:rgba(255,255,255,.12);color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.18)}
+.orcid-row{display:flex;align-items:center;gap:8px;margin-top:14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:8px 14px;width:fit-content;cursor:pointer;transition:.2s}
+.orcid-row:hover{background:rgba(255,255,255,.14)}
+.orcid-row .oid{font-family:'Inter',monospace;font-size:14px;font-weight:600;color:#FFD07A;letter-spacing:.5px}
+/* STATS */
+.stats-bar{background:white;border-bottom:1px solid var(--g200);box-shadow:var(--shadow)}
+.stats-bar .inner{max-width:1100px;margin:auto;padding:0 24px;display:flex;overflow-x:auto}
+.stat-item{flex:1;min-width:110px;padding:18px 16px;border-right:1px solid var(--g200);text-align:center;transition:.2s}
+.stat-item:last-child{border-right:none}
+.stat-item:hover{background:var(--g50)}
+.stat-num{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--maroon);line-height:1}
+.stat-label{font-size:11px;color:var(--soft);text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+/* LAYOUT */
+.container{max-width:1100px;margin:0 auto;padding:28px 24px;display:grid;grid-template-columns:300px 1fr;gap:24px;align-items:start}
+/* SIDEBAR */
+.sidebar{display:flex;flex-direction:column;gap:16px;position:sticky;top:70px}
+.card{background:white;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.card-head{padding:14px 18px;border-bottom:1px solid var(--g100);display:flex;align-items:center;gap:8px;background:var(--g50)}
+.card-head h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;color:var(--soft)}
+.card-head i{color:var(--maroon2);font-size:13px}
+.card-body{padding:16px 18px}
+.bio-text{font-size:13.5px;line-height:1.7;color:var(--g700)}
+.keywords{display:flex;flex-wrap:wrap;gap:6px}
+.kw{background:var(--maroon-l);color:var(--maroon);font-size:12px;padding:3px 9px;border-radius:20px;font-weight:500}
+.profile-link{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--g100);font-size:13px;color:var(--text);transition:.15s}
+.profile-link:last-child{border-bottom:none}
+.profile-link:hover{color:var(--maroon)}
+.profile-link .icon{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+.icon.orcid{background:#A6CE39;color:white}
+.icon.scholar{background:#4285F4;color:white}
+.icon.brunel{background:var(--maroon);color:white;font-size:9px;font-weight:700}
+.icon.li{background:#0077B5;color:white}
+.icon.rg{background:#40BAA8;color:white;font-size:10px;font-weight:700}
+.icon.tw{background:#1DA1F2;color:white}
+.contact-row{display:flex;align-items:center;gap:10px;padding:7px 0;font-size:13px;color:var(--g700);border-bottom:1px solid var(--g100)}
+.contact-row:last-child{border-bottom:none}
+.contact-row i{color:var(--maroon);width:16px;text-align:center;flex-shrink:0}
+/* MAIN */
+.main{min-width:0}
+.tabs{background:white;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;margin-bottom:20px}
+.tab-nav{display:flex;overflow-x:auto;border-bottom:1px solid var(--g200);background:var(--g50)}
+.tab-btn{padding:13px 16px;font-size:13px;font-weight:500;color:var(--soft);border:none;background:none;cursor:pointer;white-space:nowrap;border-bottom:3px solid transparent;transition:.2s;display:flex;align-items:center;gap:6px}
+.tab-btn:hover{color:var(--maroon)}
+.tab-btn.active{color:var(--maroon);border-bottom-color:var(--maroon);background:white}
+.tab-pane{display:none;padding:24px}
+.tab-pane.active{display:block}
+.pane-sec{margin-bottom:32px}
+.pane-sec h2{font-size:17px;font-weight:700;color:var(--maroon);margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--maroon-l);display:flex;align-items:center;gap:8px}
+.pane-sec h2 i{color:var(--maroon2);font-size:15px}
+/* PUB CARDS */
+.pub-controls{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px;align-items:center}
+.pub-search{flex:1;min-width:180px;position:relative}
+.pub-search input{width:100%;padding:9px 12px 9px 34px;border:1px solid var(--g200);border-radius:8px;font-size:13px;outline:none;font-family:'Inter',sans-serif;transition:.2s}
+.pub-search input:focus{border-color:var(--maroon);box-shadow:0 0 0 3px rgba(107,31,42,.1)}
+.pub-search i{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--soft);font-size:13px}
+.filter-grp{display:flex;flex-wrap:wrap;gap:6px}
+.filt{padding:5px 12px;border-radius:20px;font-size:12px;font-weight:500;border:1px solid var(--g200);background:white;cursor:pointer;transition:.2s;color:var(--soft)}
+.filt:hover{border-color:var(--maroon);color:var(--maroon)}
+.filt.active{background:var(--maroon);color:white;border-color:var(--maroon)}
+.pub-sort{padding:7px 10px;border-radius:8px;border:1px solid var(--g200);font-size:12px;font-family:'Inter',sans-serif;outline:none;color:var(--g700);background:white;cursor:pointer}
+.pub-card{background:white;border:1px solid var(--g200);border-radius:10px;padding:16px;margin-bottom:10px;transition:.2s;border-left:4px solid transparent}
+.pub-card:hover{box-shadow:var(--shadow-md)}
+.pub-card.journal{border-left-color:var(--maroon)}
+.pub-card.book{border-left-color:var(--gold)}
+.pub-card.conf{border-left-color:var(--navy)}
+.pub-card.report{border-left-color:var(--green)}
+.pub-top{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.pub-badge{font-size:11px;font-weight:600;padding:2px 8px;border-radius:12px;white-space:nowrap}
+.pb-j{background:var(--maroon-l);color:var(--maroon)}
+.pb-b{background:var(--gold-l);color:var(--gold)}
+.pb-c{background:var(--navy-l);color:var(--navy)}
+.pb-r{background:var(--green-l);color:var(--green)}
+.pb-y{background:var(--g50);color:var(--soft);border:1px solid var(--g200)}
+.pub-title{font-size:14px;font-weight:600;color:var(--g900);line-height:1.4;margin-bottom:5px}
+.pub-authors{font-size:12.5px;color:var(--soft);margin-bottom:4px;font-style:italic}
+.pub-authors strong{color:var(--maroon);font-style:normal;font-weight:600}
+.pub-journal{font-size:12.5px;color:var(--g700);margin-bottom:8px}
+.pub-actions{display:flex;gap:6px;flex-wrap:wrap}
+.btn-sm{display:inline-flex;align-items:center;gap:4px;font-size:12px;padding:4px 10px;border-radius:6px;border:1px solid var(--g200);background:white;cursor:pointer;font-family:'Inter',sans-serif;color:var(--g700);transition:.15s}
+.btn-sm:hover{background:var(--g50)}
+.btn-sm.primary{background:var(--maroon-l);border-color:var(--maroon2);color:var(--maroon)}
+.btn-sm.primary:hover{background:var(--maroon);color:white}
+.pub-count{font-size:13px;color:var(--soft);margin-bottom:12px;font-style:italic}
+/* TIMELINE */
+.timeline{position:relative;padding-left:24px}
+.timeline::before{content:'';position:absolute;left:6px;top:6px;bottom:0;width:2px;background:var(--g200)}
+.tl-item{position:relative;margin-bottom:22px}
+.tl-dot{position:absolute;left:-24px;top:5px;width:14px;height:14px;border-radius:50%;border:2px solid white;box-shadow:0 0 0 2px var(--maroon);background:var(--maroon)}
+.tl-dot.past{background:var(--g300,#CBD5E1);box-shadow:0 0 0 2px #CBD5E1}
+.tl-dot.gold{background:var(--gold);box-shadow:0 0 0 2px var(--gold)}
+.tl-card{background:var(--g50);border:1px solid var(--g200);border-radius:8px;padding:13px 15px}
+.tl-card:hover{box-shadow:var(--shadow)}
+.tl-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap;margin-bottom:4px}
+.tl-title{font-weight:600;font-size:14px;color:var(--maroon)}
+.tl-date{font-size:12px;color:var(--soft);white-space:nowrap;background:var(--g100);padding:2px 8px;border-radius:12px}
+.tl-org{font-size:13px;color:var(--soft);font-style:italic;margin-bottom:5px}
+.tl-bul{margin-left:14px;list-style:disc;color:var(--soft)}
+.tl-bul li{margin-bottom:2px;font-size:12.5px}
+/* FELLOWSHIP CARDS */
+.fellow-card{background:white;border:1px solid var(--g200);border-radius:8px;padding:14px;margin-bottom:8px;display:flex;gap:12px;align-items:flex-start;border-left:3px solid var(--gold)}
+.fellow-icon{width:36px;height:36px;border-radius:6px;background:var(--gold-l);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.fellow-title{font-weight:600;font-size:13.5px;color:var(--maroon);margin-bottom:2px}
+.fellow-org{font-size:12px;color:var(--soft)}
+.fellow-year{font-size:11px;background:var(--gold-l);color:var(--gold);padding:1px 7px;border-radius:10px;font-weight:600;margin-left:6px}
+/* SKILL PILLS */
+.skill-grp{margin-bottom:18px}
+.skill-grp-title{font-size:13px;font-weight:600;color:var(--maroon);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.skill-pills{display:flex;flex-wrap:wrap;gap:7px}
+.sp-res{background:var(--maroon-l);color:var(--maroon);border:1px solid #E0B0B5;font-size:12.5px;padding:4px 11px;border-radius:20px;font-weight:500}
+.sp-soft{background:var(--navy-l);color:var(--navy);border:1px solid #B0C4DE;font-size:12.5px;padding:4px 11px;border-radius:20px;font-weight:500}
+.sp-lang{background:var(--gold-l);color:var(--gold);border:1px solid #ECC88A;font-size:12.5px;padding:4px 11px;border-radius:20px;font-weight:500}
+.copy-toast{position:fixed;bottom:24px;right:24px;background:var(--maroon);color:white;padding:10px 18px;border-radius:8px;font-size:13px;z-index:999;opacity:0;transition:opacity .3s;pointer-events:none}
+.copy-toast.show{opacity:1}
+@media(max-width:760px){.container{grid-template-columns:1fr}.sidebar{position:static}.hero .inner{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<header class="top-bar">
+  <div class="inner">
+    <div class="logo">
+      <div class="ic">BUL</div>
+      <span>Academic Profile</span>
+    </div>
+    <nav>
+      <a href="#" class="active" onclick="switchTab('overview');return false">Overview</a>
+      <a href="#" onclick="switchTab('publications');return false">Publications</a>
+      <a href="#" onclick="switchTab('employment');return false">Employment</a>
+      <a href="#" onclick="switchTab('research');return false">Research</a>
+      <a href="#" onclick="switchTab('teaching');return false">Teaching</a>
+      <a href="#" onclick="switchTab('activities');return false">Activities</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="inner">
+    <div class="avatar">AFZ</div>
+    <div class="hero-info">
+      <h1>Prof. Ahmed F. Zobaa</h1>
+      <p class="subtitle">Reader in Electrical and Power Engineering &nbsp;·&nbsp; DSc, PhD</p>
+      <p class="affil">Electronic and Electrical Engineering, Brunel University London, UK &nbsp;|&nbsp; Howell Building 217</p>
+      <div class="badges">
+        <span class="badge red"><i class="fas fa-bolt"></i> Power Quality & Smart Grids</span>
+        <span class="badge red"><i class="fas fa-solar-panel"></i> Renewable Energy</span>
+        <span class="badge gold"><i class="fas fa-award"></i> PFHEA · FIET · FAfAS</span>
+        <span class="badge gray"><i class="fas fa-map-marker-alt"></i> London, UK</span>
+        <span class="badge gray"><i class="fas fa-graduation-cap"></i> DSc Brunel 2017</span>
+      </div>
+      <div class="orcid-row" onclick="copyOrcid()">
+        <div style="background:#A6CE39;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:white;flex-shrink:0">iD</div>
+        <span class="oid">0000-0001-5398-2384</span>
+        <span style="font-size:11px;opacity:.6;margin-left:4px"><i class="far fa-copy"></i> copy</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="inner">
+    <div class="stat-item"><div class="stat-num" id="s-pubs">0</div><div class="stat-label">Publications</div></div>
+    <div class="stat-item"><div class="stat-num" id="s-phd">0</div><div class="stat-label">PhD Supervised</div></div>
+    <div class="stat-item"><div class="stat-num" id="s-fellow">0</div><div class="stat-label">Fellowships</div></div>
+    <div class="stat-item"><div class="stat-num" id="s-grants">0</div><div class="stat-label">Research Grants</div></div>
+    <div class="stat-item"><div class="stat-num" id="s-exp">0</div><div class="stat-label">Years Experience</div></div>
+    <div class="stat-item"><div class="stat-num" id="s-dsc" style="font-size:20px">DSc</div><div class="stat-label">Highest Degree</div></div>
+  </div>
+</div>
+
+<!-- LAYOUT -->
+<div class="container">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="card">
+      <div class="card-head"><i class="fas fa-user-circle"></i><h3>Biography</h3></div>
+      <div class="card-body">
+        <p class="bio-text">Prof. Ahmed F. Zobaa (IEEE Senior Member) is Reader in Electrical and Power Engineering at Brunel University London. A Cairo University graduate (BSc 1992, MSc 1997, PhD 2002), he earned a DSc from Brunel (2017). With 30+ years of academic experience across Egypt, UK, and Spain, he has authored 374+ publications and supervised 30+ PhD students. His research spans power quality, renewable energy, smart grids, and engineering education.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><i class="fas fa-tags"></i><h3>Research Keywords</h3></div>
+      <div class="card-body">
+        <div class="keywords">
+          <span class="kw">Power Quality</span>
+          <span class="kw">Smart Grids</span>
+          <span class="kw">Renewable Energy</span>
+          <span class="kw">Marine Energy</span>
+          <span class="kw">Energy Efficiency</span>
+          <span class="kw">Power Systems</span>
+          <span class="kw">Harmonic Mitigation</span>
+          <span class="kw">FACTS & HVDC</span>
+          <span class="kw">Distribution Networks</span>
+          <span class="kw">Lighting Applications</span>
+          <span class="kw">Energy Management</span>
+          <span class="kw">Engineering Education</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><i class="fas fa-external-link-alt"></i><h3>Academic Profiles</h3></div>
+      <div class="card-body" style="padding:10px 18px">
+        <a class="profile-link" href="https://orcid.org/0000-0001-5398-2384" target="_blank">
+          <div class="icon orcid">iD</div>
+          <div style="flex:1"><div style="font-weight:500">ORCID</div><div style="font-size:11px;color:var(--soft)">0000-0001-5398-2384</div></div>
+          <i class="fas fa-external-link-alt" style="color:var(--g200);font-size:11px"></i>
+        </a>
+        <a class="profile-link" href="https://scholar.google.com/citations?hl=en&user=u2kyn-sAAAAJ" target="_blank">
+          <div class="icon scholar"><i class="fab fa-google"></i></div>
+          <div style="flex:1"><div style="font-weight:500">Google Scholar</div><div style="font-size:11px;color:var(--soft)">374+ publications</div></div>
+          <i class="fas fa-external-link-alt" style="color:var(--g200);font-size:11px"></i>
+        </a>
+        <a class="profile-link" href="https://www.brunel.ac.uk/people/ahmed-zobaa" target="_blank">
+          <div class="icon brunel">BUL</div>
+          <div style="flex:1"><div style="font-weight:500">Brunel University</div><div style="font-size:11px;color:var(--soft)">Official Profile</div></div>
+          <i class="fas fa-external-link-alt" style="color:var(--g200);font-size:11px"></i>
+        </a>
+        <a class="profile-link" href="https://uk.linkedin.com/in/ahmedzobaa" target="_blank">
+          <div class="icon li"><i class="fab fa-linkedin-in"></i></div>
+          <div style="flex:1"><div style="font-weight:500">LinkedIn</div><div style="font-size:11px;color:var(--soft)">ahmedzobaa</div></div>
+          <i class="fas fa-external-link-alt" style="color:var(--g200);font-size:11px"></i>
+        </a>
+        <a class="profile-link" href="https://twitter.com/ahmed_zobaa" target="_blank">
+          <div class="icon tw"><i class="fab fa-twitter"></i></div>
+          <div style="flex:1"><div style="font-weight:500">Twitter / X</div><div style="font-size:11px;color:var(--soft)">@ahmed_zobaa</div></div>
+          <i class="fas fa-external-link-alt" style="color:var(--g200);font-size:11px"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><i class="fas fa-address-card"></i><h3>Contact</h3></div>
+      <div class="card-body" style="padding:10px 18px">
+        <div class="contact-row"><i class="fas fa-envelope"></i><a href="mailto:ahmed.zobaa@brunel.ac.uk">ahmed.zobaa@brunel.ac.uk</a></div>
+        <div class="contact-row"><i class="fas fa-phone"></i><span>+44 (0)1895 265335</span></div>
+        <div class="contact-row"><i class="fas fa-building"></i><span>Howell Building 217, Brunel University London</span></div>
+        <div class="contact-row"><i class="fas fa-map-marker-alt"></i><span>Kingston Lane, Uxbridge, Middlesex UB8 3PH, UK</span></div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <div class="tabs">
+      <div class="tab-nav">
+        <button class="tab-btn active" onclick="switchTab('overview')"><i class="fas fa-th-large"></i>Overview</button>
+        <button class="tab-btn" onclick="switchTab('publications')"><i class="fas fa-file-alt"></i>Publications</button>
+        <button class="tab-btn" onclick="switchTab('employment')"><i class="fas fa-briefcase"></i>Employment</button>
+        <button class="tab-btn" onclick="switchTab('research')"><i class="fas fa-flask"></i>Research</button>
+        <button class="tab-btn" onclick="switchTab('teaching')"><i class="fas fa-chalkboard-teacher"></i>Teaching</button>
+        <button class="tab-btn" onclick="switchTab('activities')"><i class="fas fa-medal"></i>Activities</button>
+      </div>
+
+      <!-- OVERVIEW TAB -->
+      <div class="tab-pane active" id="tab-overview">
+        <div class="pane-sec">
+          <h2><i class="fas fa-star"></i>Highlights</h2>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div style="background:var(--maroon-l);border:1px solid #E0B0B5;border-radius:8px;padding:16px">
+              <div style="font-size:22px;font-weight:700;color:var(--maroon)">374+</div>
+              <div style="font-size:12px;color:var(--maroon);margin-top:2px">Publications</div>
+              <div style="font-size:11px;color:var(--soft);margin-top:6px">Journals, Books, Conferences, Reports</div>
+            </div>
+            <div style="background:var(--gold-l);border:1px solid #ECC88A;border-radius:8px;padding:16px">
+              <div style="font-size:22px;font-weight:700;color:var(--gold)">DSc 2017</div>
+              <div style="font-size:12px;color:var(--gold);margin-top:2px">Doctor of Science</div>
+              <div style="font-size:11px;color:var(--soft);margin-top:6px">Brunel University London — Highest Academic Degree</div>
+            </div>
+            <div style="background:var(--navy-l);border:1px solid #B0C4DE;border-radius:8px;padding:16px">
+              <div style="font-size:22px;font-weight:700;color:var(--navy)">8</div>
+              <div style="font-size:12px;color:var(--navy);margin-top:2px">Professional Fellowships</div>
+              <div style="font-size:11px;color:var(--soft);margin-top:6px">PFHEA · FIMechE · FAfAS · FRSA · FEI · FCIBSE · FIET</div>
+            </div>
+            <div style="background:var(--green-l);border:1px solid #A8D5BB;border-radius:8px;padding:16px">
+              <div style="font-size:22px;font-weight:700;color:var(--green)">30+</div>
+              <div style="font-size:12px;color:var(--green);margin-top:2px">PhD Students Supervised</div>
+              <div style="font-size:11px;color:var(--soft);margin-top:6px">As first and secondary supervisor — all with successful completion</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pane-sec">
+          <h2><i class="fas fa-clock"></i>Recent Publications</h2>
+          <div id="recent-pubs"></div>
+        </div>
+
+        <div class="pane-sec">
+          <h2><i class="fas fa-globe"></i>Research Areas</h2>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+            <div style="background:var(--g50);border:1px solid var(--g200);border-radius:8px;padding:14px">
+              <div style="font-weight:600;font-size:13px;color:var(--maroon);margin-bottom:6px"><i class="fas fa-bolt" style="color:var(--maroon);margin-right:6px"></i>Power Quality</div>
+              <div style="font-size:12px;color:var(--soft);line-height:1.6">Passive & active filters · Harmonic mitigation · Power factor correction · Probabilistic modeling</div>
+            </div>
+            <div style="background:var(--g50);border:1px solid var(--g200);border-radius:8px;padding:14px">
+              <div style="font-weight:600;font-size:13px;color:var(--maroon);margin-bottom:6px"><i class="fas fa-solar-panel" style="color:var(--maroon);margin-right:6px"></i>Renewable Energy</div>
+              <div style="font-size:12px;color:var(--soft);line-height:1.6">Marine renewables · Wave & tidal energy · Grid integration · Wind turbines · PV systems</div>
+            </div>
+            <div style="background:var(--g50);border:1px solid var(--g200);border-radius:8px;padding:14px">
+              <div style="font-weight:600;font-size:13px;color:var(--maroon);margin-bottom:6px"><i class="fas fa-network-wired" style="color:var(--maroon);margin-right:6px"></i>Smart Grids</div>
+              <div style="font-size:12px;color:var(--soft);line-height:1.6">Distribution networks · EV integration · FACTS & HVDC · Hosting capacity · Microgrid management</div>
+            </div>
+            <div style="background:var(--g50);border:1px solid var(--g200);border-radius:8px;padding:14px">
+              <div style="font-weight:600;font-size:13px;color:var(--maroon);margin-bottom:6px"><i class="fas fa-graduation-cap" style="color:var(--maroon);margin-right:6px"></i>Engineering Education</div>
+              <div style="font-size:12px;color:var(--soft);line-height:1.6">Innovative teaching methods · Blended learning · Virtual labs · AI-enhanced learning</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PUBLICATIONS TAB -->
+      <div class="tab-pane" id="tab-publications">
+        <div style="background:var(--maroon-l);border:1px solid #E0B0B5;border-radius:8px;padding:12px 16px;margin-bottom:16px;font-size:13px;color:var(--maroon)">
+          <i class="fas fa-info-circle" style="margin-right:6px"></i>
+          Showing selected recent publications (2022–2026). Prof. Zobaa has <strong>374+ total publications</strong>.
+          <a href="https://scholar.google.com/citations?hl=en&user=u2kyn-sAAAAJ" target="_blank" style="color:var(--maroon);font-weight:600;margin-left:4px">View full list on Google Scholar →</a>
+        </div>
+        <div class="pub-controls">
+          <div class="pub-search"><i class="fas fa-search"></i>
+            <input type="text" id="pub-search-input" placeholder="Search publications..." oninput="renderPubs()">
+          </div>
+          <div class="filter-grp">
+            <button class="filt active" onclick="setFilter(this,'all')">All</button>
+            <button class="filt" onclick="setFilter(this,'journal')">Journal Articles</button>
+            <button class="filt" onclick="setFilter(this,'book')">Books</button>
+            <button class="filt" onclick="setFilter(this,'conf')">Conference</button>
+            <button class="filt" onclick="setFilter(this,'report')">Reports</button>
+          </div>
+          <select class="pub-sort" onchange="renderPubs()">
+            <option value="newest">Newest first</option>
+            <option value="oldest">Oldest first</option>
+          </select>
+        </div>
+        <p class="pub-count" id="pub-count"></p>
+        <div id="pub-list"></div>
+      </div>
+
+      <!-- EMPLOYMENT TAB -->
+      <div class="tab-pane" id="tab-employment">
+        <div class="pane-sec">
+          <h2><i class="fas fa-briefcase"></i>Academic Positions</h2>
+          <div class="timeline" id="emp-timeline"></div>
+        </div>
+        <div class="pane-sec">
+          <h2><i class="fas fa-graduation-cap"></i>Education</h2>
+          <div class="timeline" id="edu-timeline"></div>
+        </div>
+      </div>
+
+      <!-- RESEARCH TAB -->
+      <div class="tab-pane" id="tab-research">
+        <div id="research-content"></div>
+      </div>
+
+      <!-- TEACHING TAB -->
+      <div class="tab-pane" id="tab-teaching">
+        <div id="teaching-content"></div>
+      </div>
+
+      <!-- ACTIVITIES TAB -->
+      <div class="tab-pane" id="tab-activities">
+        <div class="pane-sec">
+          <h2><i class="fas fa-medal"></i>Professional Fellowships</h2>
+          <div id="fellowships-list"></div>
+        </div>
+        <div class="pane-sec">
+          <h2><i class="fas fa-users"></i>Professional Memberships</h2>
+          <div id="membership-list"></div>
+        </div>
+        <div class="pane-sec">
+          <h2><i class="fas fa-user-graduate"></i>PhD Supervision Topics</h2>
+          <div id="phd-topics"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<div class="copy-toast" id="toast"></div>
+
+<script>
+// ── DATA ──────────────────────────────────────────────────
+const PUBS = [
+  {id:'P1',type:'book',year:2026,
+   title:'Smart Grids - Innovations for a Sustainable Future',
+   authors:'<strong>Zobaa, AF.</strong>',
+   journal:'London: IntechOpen',details:'ISBN: 978-1-83634-937-2, 2026',doi:null},
+  {id:'P2',type:'journal',year:2026,
+   title:'Analytical Characterization of Grid-Forming Converter Response Time under Voltage Sags',
+   authors:'Lin, M., Zhang, L., Yang, Q., Mansour, D-EA. and <strong>Zobaa, AF.</strong>',
+   journal:'IEEE Transactions on Power Electronics',details:'Early Access, 2026. ISSN: 0885-8993',
+   doi:'10.1109/TPEL.2026.3674121'},
+  {id:'P3',type:'journal',year:2026,
+   title:'Digital Real-Time Simulation Advancing Education and Training on Power and Energy Systems',
+   authors:'Kotsampopoulos, P., Paspatis, A., Hatziargyriou, N., Davari, M., Konstantinou, G., <strong>Zobaa, AF.</strong> et al.',
+   journal:'IEEE Transactions on Power Systems',details:'Accepted, in press, 2026. ISSN: 0885-8950',
+   doi:'10.1109/TPWRS.2026.3660662'},
+  {id:'P4',type:'journal',year:2026,
+   title:'Double Deep Reinforcement Learning Twin-Delayed Agents for Performance Improvement of a Grid-Connected Wave Energy Conversion System',
+   authors:'Aldawsari, F., Mahdy, A., Ali, ZM., <strong>Zobaa, AF.</strong>, Abdel Aleem, SHE. and Hasanien, HM.',
+   journal:'Scientific Reports',details:'2026',doi:'10.1038/s41598-026-55262-w'},
+  {id:'P5',type:'conf',year:2025,
+   title:'PSO-Optimized Graph Neural Networks for Ransomware Detection in Smart Grids',
+   authors:'Hamed, A., Alahmadi, M., Albshr, A., Fakhry, H., <strong>Zobaa, AF.</strong> and Gaber, T.',
+   journal:'26th International Middle East Power Systems Conference (MEPCON 2025)',details:'Aswan, Egypt, December 2025. IEEE',
+   doi:'10.1109/MEPCON66918.2026.11360108'},
+  {id:'P6',type:'journal',year:2025,
+   title:'State and Disturbance Estimation with Supertwisting Sliding Mode Control for Frequency Regulation in Hydrogen Based Microgrids',
+   authors:'Taher, AM., Hasanien, HM., Al-Gahtani, SF., Ali, ZM., <strong>Zobaa, AF.</strong> and Abdel Aleem, SHE.',
+   journal:'Scientific Reports',details:'Vol. 15, No. 1, pp. 1–36, 2025. ISSN: 2045-2322',
+   doi:'10.1038/s41598-025-23150-4'},
+  {id:'P7',type:'book',year:2025,
+   title:'Distributed Generation - Pioneering the Future of Decentralized Energy',
+   authors:'<strong>Zobaa, AF.</strong> and Zobaa, AM.',
+   journal:'London: IntechOpen',details:'ISBN: 978-1-83769-741-0, 2025',doi:null},
+  {id:'P8',type:'journal',year:2025,
+   title:'Energy Management Solution for Islanding Based on a Dynamic Neuro-Fuzzy-Optical Microscope Algorithm',
+   authors:'Osama, A., Allam, D., <strong>Zobaa, AF.</strong> and Eteiba, MB.',
+   journal:'IEEE Access',details:'Vol. 13, pp. 162256–162272, 2025',
+   doi:'10.1109/ACCESS.2025.3610524'},
+  {id:'P9',type:'journal',year:2025,
+   title:'Bi-Level Multi-Objective Optimization of Harmonic Filters for PV Penetration and Harmonics Mitigation',
+   authors:'Elhussiny, A., Abdel Aleem, SHE., El-Kholy, EE., <strong>Zobaa, AF.</strong> and Zobaa, AM.',
+   journal:'Ain Shams Engineering Journal',details:'Vol. 16, No. 8, 2025. ISSN: 2090-4479',
+   doi:'10.1016/j.asej.2025.103479'},
+  {id:'P10',type:'journal',year:2024,
+   title:'A Comprehensive Review of Renewables and Electric Vehicles Hosting Capacity in Active Distribution Networks',
+   authors:'Zenhom, ZM., Abdel Aleem, SHE., <strong>Zobaa, AF.</strong> and Boghdady, TA.',
+   journal:'IEEE Access',details:'Vol. 12, pp. 3672–3699, 2024',
+   doi:'10.1109/ACCESS.2023.3349235'},
+  {id:'P11',type:'journal',year:2024,
+   title:'State-of-the-Art of the Most Commonly Adopted Wave Energy Conversion Systems',
+   authors:'Mahdy, A., Hasanien, HM., Abdel Aleem, SHE., Al-Dhaifallah, M., <strong>Zobaa, AF.</strong> and Ali, ZM.',
+   journal:'Ain Shams Engineering Journal',details:'Vol. 15, No. 1, pp. 102322, 2024',
+   doi:'10.1016/j.asej.2023.102322'},
+  {id:'P12',type:'report',year:2024,
+   title:'Innovative Teaching Methods for Modern Power and Energy Systems',
+   authors:'IEEE Power and Energy Education Committee (including <strong>Zobaa, AF.</strong>)',
+   journal:'IEEE Technical Report',details:'IEEE PES Technical Report TR120, 2024',
+   doi:null},
+  {id:'P13',type:'journal',year:2023,
+   title:'High Frequency Directional-Based Protection Scheme for Transmission Lines Emanating from Large Scale Wind Farms',
+   authors:'Aboshady, FM., Saber, A., Khera, F. and <strong>Zobaa, AF.</strong>',
+   journal:'Electric Power Systems Research',details:'Vol. 225, 2023. ISSN: 0378-7796',
+   doi:'10.1016/j.epsr.2023.109904'},
+  {id:'P14',type:'book',year:2023,
+   title:'Modernization of Electric Power Systems - Energy Efficiency and Power Quality',
+   authors:'<strong>Zobaa, AF.</strong> and Abdel Aleem, SHE.',
+   journal:'Cham, Switzerland: Springer Nature',details:'ISBN: 978-3-031-18995-1, 2023',doi:null},
+  {id:'P15',type:'journal',year:2023,
+   title:'Reactive Power Control of PV Inverters in Active Distribution Grids with High PV Penetration',
+   authors:'Aboshady, FM., Pisica, I., <strong>Zobaa, AF.</strong>, Taylor, G., Ceylan, O. and Ozdemir, A.',
+   journal:'IEEE Access',details:'Vol. 11, pp. 81477–81496, 2023. ISSN: 2169-3536',
+   doi:'10.1109/ACCESS.2023.3299351'},
+  {id:'P16',type:'journal',year:2022,
+   title:'Allocation of Dump Load in Islanded Microgrid Using Mixed-Integer Distributed Ant Colony Optimization',
+   authors:'Kreishan, MZ. and <strong>Zobaa, AF.</strong>',
+   journal:'IEEE Systems Journal',details:'Vol. 16, No. 2, pp. 2568–2579, 2022. ISSN: 1932-8184',
+   doi:'10.1109/JSYST.2021.3100409'},
+  {id:'P17',type:'journal',year:2022,
+   title:'A Distributed Optimization Model for Mitigating Three-Phase Power Imbalance with Electric Vehicles and Grid Battery',
+   authors:'Huang, L., Chen, D., Lai, CS., Huang, Z., <strong>Zobaa, AF.</strong> and Lai, LL.',
+   journal:'Electric Power Systems Research',details:'Vol. 210, pp. 108080, 2022. ISSN: 0378-7796',
+   doi:'10.1016/j.epsr.2022.108080'},
+];
+
+const EMPLOYMENT = [
+  {title:'Reader in Electrical and Power Engineering',org:'Electronic and Electrical Engineering, Brunel University London, UK',date:'2019 – Present',dot:'current',
+   details:['Member, Brunel Interdisciplinary Power Systems Research Centre','374+ publications, 30+ PhD students supervised','Research in power quality, smart grids, renewable energy, and engineering education']},
+  {title:'Senior Lecturer in Power Systems',org:'Electronic and Electrical Engineering, Brunel University London, UK',date:'2010 – 2019',dot:'past',
+   details:['Developed and led MSc Sustainable Electrical Power programme','Established Brunel power systems research group']},
+  {title:'Senior Lecturer in Renewable Energy',org:'University of Exeter, UK',date:'2007 – 2010',dot:'past',
+   details:['Awarded Postgraduate Certificate in Academic Practice (2010)','Awarded Honorary Fellowship of University of Exeter Cornwall Campus (2010)','Contributed to PRIMaRE Marine Renewable Energy Partnership (SWRDA/EU)']},
+  {title:'Instructor / Teaching Assistant / Assistant Professor',org:'Cairo University, Faculty of Engineering, Egypt',date:'1992 – 2007',dot:'past',
+   details:['15 years at Cairo University across multiple academic ranks','Completed B.Sc. (1992), M.Sc. (1997), and Ph.D. (2002) during this period','Involved in power quality and power systems research from early career']},
+];
+
+const EDUCATION = [
+  {title:'Doctor of Science (DSc) — Electronic and Electrical Engineering',org:'Brunel University London, UK',date:'October 2017',dot:'current',
+   details:['Highest academic degree — awarded for sustained outstanding research contributions']},
+  {title:'Postgraduate Certificate in Academic Practice',org:'University of Exeter, UK',date:'December 2010',dot:'past',details:[]},
+  {title:'Doctor of Philosophy (PhD) — Electric Power & Machines',org:'Cairo University, Egypt',date:'November 2002',dot:'past',details:[]},
+  {title:'Master of Science (MSc) — Electric Power & Machines',org:'Cairo University, Egypt',date:'May 1997',dot:'past',details:[]},
+  {title:'Bachelor of Science (BSc Hons) — Electric Power & Machines',org:'Cairo University, Egypt',date:'June 1992',dot:'past',details:[]},
+];
+
+const FELLOWSHIPS = [
+  {icon:'🎓',title:'Principal Fellow',org:'Higher Education Academy (PFHEA)',year:'2023'},
+  {icon:'⚙️',title:'Fellow',org:'Institution of Mechanical Engineers (FIMechE)',year:'2016'},
+  {icon:'🌍',title:'Fellow',org:'African Academy of Sciences (FAfAS)',year:'2014'},
+  {icon:'🎨',title:'Fellow',org:'Royal Society of Arts (FRSA)',year:'2013'},
+  {icon:'⚡',title:'Fellow',org:'Energy Institute (FEI)',year:'2011'},
+  {icon:'🏗️',title:'Fellow',org:'Chartered Institution of Building Services Engineers (FCIBSE)',year:'2011'},
+  {icon:'🔌',title:'Fellow',org:'Institution of Engineering and Technology (FIET)',year:'2009'},
+  {icon:'🏛️',title:'Honorary Fellow',org:'University of Exeter Cornwall Campus',year:'2010'},
+];
+
+const RESEARCH_PROJECTS = [
+  {title:'Implementing Digitalization to Improve Energy Efficiency in Turkish Distribution Networks',funder:'British Council',period:'2021 – 2023',
+   desc:'Increasing welfare of low-income population in Southeast Turkey through digitalized energy systems, reducing power losses and enabling more renewable energy installations.'},
+  {title:'UK-Egypt Enhanced Research Networks in Renewable Energy',funder:'British Council — Researcher Links Workshop',period:'2015 – Present',
+   desc:'Supporting economic development through UK-Egypt collaborative research in renewable energy.'},
+  {title:'e-HIGHWAY2050 — Modular Development Plan of the Pan-European Transmission System',funder:'European Commission',period:'2012 – 2015',
+   desc:'Developing a modular plan for the pan-European transmission system to accommodate renewable energy targets for 2050.'},
+  {title:'CENIT-E OCEAN LIDER — Marine Renewable Energy Technologies',funder:'CDTI & Spanish Government',period:'2010 – 2012',
+   desc:'Developing technologies for integrated marine renewable energy installations harnessing waves and tidal currents.'},
+  {title:"Britain's Energy Security in a Multipolar World",funder:'Engineering and Physical Sciences Research Council (EPSRC)',period:'2009 – 2012',
+   desc:'Analysing energy policy, international relations, and supply chain policy for Britain\'s energy security in the context of a changing geopolitical landscape.'},
+  {title:'Partnership for Research in Marine Renewable Energy (PRIMaRE)',funder:'SWRDA / European Union',period:'2007 – 2010',
+   desc:'Consortium of universities (Plymouth, Exeter, Southampton, Bristol, Bath) establishing excellence in marine renewable energy research.'},
+  {title:'Investigation of Active Power Filters for Energy Efficiency and Power Quality',funder:'National Science Fund, Bulgaria',period:'2005 – 2009',
+   desc:'Investigating possibilities for implementation of active power filters for increasing energy efficiency and improving power quality.'},
+];
+
+const COURSES_TAUGHT = [
+  {code:'EE5519',title:'Power Electronics and FACTS',level:'Postgraduate',period:'2010 – 2022'},
+  {code:'EE3623',title:'Robotics & Control Systems',level:'Third Year',period:'2021'},
+  {code:'EE3624',title:'Sustainable Electrical Energy Systems',level:'Third Year',period:'2021'},
+  {code:'EE3605',title:'Renewable Energy in Power Systems',level:'Third Year',period:'2011 – 2021'},
+  {code:'EE3050',title:'Control Systems',level:'Third Year',period:'2018'},
+  {code:'EE1068',title:'Electronic Engineering Systems Workshop',level:'First Year',period:'2010 – 2018'},
+  {code:'EE2603',title:'Electrical Engineering and Sustainability',level:'Second Year',period:'2010 – 2018'},
+  {code:'EE5518',title:'Power System Analysis and Security',level:'Postgraduate',period:'2015'},
+  {code:'EE5568',title:'Renewable Energy and Power Electronics Systems',level:'Postgraduate',period:'2013 – 2014'},
+  {code:'EE5524',title:'Sustainable Power Generation',level:'Postgraduate',period:'2011'},
+  {code:'EE5521',title:'Power Systems Stability and Control',level:'Postgraduate',period:'2010'},
+];
+
+const PHD_TOPICS = [
+  'Analysis, design, and development of passive and active filters to solve power quality problems',
+  'Probabilistic modeling of current and voltage harmonics in power factor correction and harmonics mitigation',
+  'Optimization algorithms for maximum energy utilization, voltage stabilization, and loss reduction in distribution systems',
+  'Sustainable energy use and engineering sustainable supply under climate change and resource depletion pressures',
+  'Methods to improve efficiency of small wind turbines',
+  'Enabling technologies for increasing renewable power penetration in smart grids',
+  'Optimal allocation of Phase Measuring Units (PMUs) for full network observability',
+  'Effectiveness of HVDC links and FACTS for grid stability enhancement',
+  'Advanced reactive power control strategies for hosting capacity enhancement',
+  'Comprehensive harmonic mitigation with high penetration of inverter-based DG units',
+  'Techno-economic optimization of energy storage systems for hosting capacity',
+  'Scaling renewable energy integration in African power grids',
+  'Developing AI-enhanced personalized learning pathways in engineering education',
+];
+
+// ── STATE ────────────────────────────────────────────────
+let currentFilter = 'all';
+
+function setFilter(el, f) {
+  currentFilter = f;
+  document.querySelectorAll('.filt').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  renderPubs();
+}
+
+function renderPubs() {
+  const q = (document.getElementById('pub-search-input').value||'').toLowerCase();
+  const sort = document.querySelector('.pub-sort').value;
+  let data = PUBS.filter(p => {
+    const match = !q || p.title.toLowerCase().includes(q) || p.authors.replace(/<[^>]+>/g,'').toLowerCase().includes(q) || p.journal.toLowerCase().includes(q);
+    const filt = currentFilter==='all' || p.type===currentFilter;
+    return match && filt;
+  });
+  data.sort((a,b) => sort==='oldest' ? a.year-b.year : b.year-a.year);
+  document.getElementById('pub-count').textContent = `Showing ${data.length} work${data.length!==1?'s':''} (selected from 374+ total)`;
+  document.getElementById('pub-list').innerHTML = data.map(pubCard).join('');
+}
+
+function pubCard(p) {
+  const labels = {journal:'Journal Article',book:'Book',conf:'Conference Paper',report:'Report'};
+  const cls = {journal:'pb-j',book:'pb-b',conf:'pb-c',report:'pb-r'};
+  const cardCls = p.type;
+  const doiBtn = p.doi ? `<a href="https://doi.org/${p.doi}" target="_blank" class="btn-sm primary"><i class="fas fa-external-link-alt"></i>DOI</a>` : '';
+  return `<div class="pub-card ${cardCls}">
+    <div class="pub-top">
+      <span class="pub-badge ${cls[p.type]}">${labels[p.type]}</span>
+      <span class="pub-badge pb-y">${p.year}</span>
+    </div>
+    <div class="pub-title">${p.title}</div>
+    <div class="pub-authors">${p.authors}</div>
+    <div class="pub-journal"><b>${p.journal}</b> · ${p.details}</div>
+    <div class="pub-actions">
+      ${doiBtn}
+      <button class="btn-sm" onclick="copyCite('${p.id}')"><i class="fas fa-copy"></i>Copy Citation</button>
+    </div>
+  </div>`;
+}
+
+function copyCite(id) {
+  const p = PUBS.find(x=>x.id===id);
+  const authors = p.authors.replace(/<[^>]+>/g,'');
+  const cite = p.doi
+    ? `${authors}, "${p.title}," ${p.journal}, ${p.details}. DOI: ${p.doi}`
+    : `${authors}, "${p.title}," ${p.journal}, ${p.details}.`;
+  navigator.clipboard.writeText(cite).then(()=>showToast('Citation copied!'));
+}
+
+function renderTimeline(data, id) {
+  document.getElementById(id).innerHTML = data.map(item=>`
+    <div class="tl-item">
+      <div class="tl-dot ${item.dot}"></div>
+      <div class="tl-card">
+        <div class="tl-top">
+          <div class="tl-title">${item.title}</div>
+          <div class="tl-date">${item.date}</div>
+        </div>
+        <div class="tl-org">${item.org}</div>
+        ${item.details.length?`<ul class="tl-bul">${item.details.map(d=>`<li>${d}</li>`).join('')}</ul>`:''}
+      </div>
+    </div>`).join('');
+}
+
+function renderResearch() {
+  document.getElementById('research-content').innerHTML = `
+    <div class="pane-sec"><h2><i class="fas fa-lightbulb"></i>Research Interests</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px">
+        ${['Lighting Applications','Power Quality Problems','Grid Integration of Renewable Energy','Marine Renewable Energy','Design & Performance Analysis of Renewable Systems','Energy Management & Systems','Smart Grids','Engineering Education'].map(r=>`<span class="sp-res">${r}</span>`).join('')}
+      </div>
+    </div>
+    <div class="pane-sec"><h2><i class="fas fa-flask"></i>Research Projects & Grants</h2>
+      ${RESEARCH_PROJECTS.map(r=>`
+        <div style="border:1px solid var(--g200);border-radius:10px;padding:16px;margin-bottom:12px;background:white;border-left:4px solid var(--maroon)">
+          <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:8px">
+            <div style="font-weight:600;font-size:14px;color:var(--maroon)">${r.title}</div>
+            <span style="font-size:11px;background:var(--maroon-l);color:var(--maroon);padding:2px 8px;border-radius:10px;font-weight:500;white-space:nowrap">${r.period}</span>
+          </div>
+          <div style="font-size:12.5px;color:var(--soft);margin-bottom:6px"><i class="fas fa-coins" style="margin-right:4px;color:var(--gold)"></i><b>Funder:</b> ${r.funder}</div>
+          <div style="font-size:13px;color:var(--g700);line-height:1.6">${r.desc}</div>
+        </div>`).join('')}
+    </div>`;
+}
+
+function renderTeaching() {
+  document.getElementById('teaching-content').innerHTML = `
+    <div class="pane-sec"><h2><i class="fas fa-book"></i>Programmes & Courses Developed</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px">
+        ${['Electronic Engineering BEng (Top Up) — Programme','Robotics and Control Systems — Course','Sustainable Electrical Energy Systems — Course','Renewable Energy in Power Systems — Course','Renewable Energy and Power Electronics Systems — Course'].map(c=>`<div style="background:var(--gold-l);border:1px solid #ECC88A;border-radius:8px;padding:8px 14px;font-size:13px;color:var(--gold);font-weight:500">${c}</div>`).join('')}
+      </div>
+    </div>
+    <div class="pane-sec"><h2><i class="fas fa-chalkboard"></i>Courses Taught at Brunel University London</h2>
+      <table style="width:100%;border-collapse:collapse;font-size:13.5px">
+        <tr style="background:var(--maroon)">
+          <th style="padding:10px 14px;text-align:left;color:white;font-size:12px;text-transform:uppercase;letter-spacing:.5px">Course</th>
+          <th style="padding:10px 14px;text-align:left;color:white;font-size:12px;text-transform:uppercase;letter-spacing:.5px">Code</th>
+          <th style="padding:10px 14px;text-align:left;color:white;font-size:12px;text-transform:uppercase;letter-spacing:.5px">Level</th>
+          <th style="padding:10px 14px;text-align:left;color:white;font-size:12px;text-transform:uppercase;letter-spacing:.5px">Period</th>
+        </tr>
+        ${COURSES_TAUGHT.map((c,i)=>`<tr style="background:${i%2===0?'#F8FAFC':'white'}">
+          <td style="padding:10px 14px;border-bottom:1px solid var(--g100);font-weight:500">${c.title}</td>
+          <td style="padding:10px 14px;border-bottom:1px solid var(--g100);color:var(--soft)">${c.code}</td>
+          <td style="padding:10px 14px;border-bottom:1px solid var(--g100)"><span style="background:${c.level.includes('Post')?'var(--maroon-l)':'var(--navy-l)'};color:${c.level.includes('Post')?'var(--maroon)':'var(--navy)'};font-size:11px;padding:2px 8px;border-radius:10px;font-weight:500">${c.level}</span></td>
+          <td style="padding:10px 14px;border-bottom:1px solid var(--g100);color:var(--soft)">${c.period}</td>
+        </tr>`).join('')}
+      </table>
+    </div>`;
+}
+
+function renderActivities() {
+  document.getElementById('fellowships-list').innerHTML = FELLOWSHIPS.map(f=>`
+    <div class="fellow-card">
+      <div class="fellow-icon">${f.icon}</div>
+      <div>
+        <div class="fellow-title">${f.title} <span class="fellow-year">${f.year}</span></div>
+        <div class="fellow-org">${f.org}</div>
+      </div>
+    </div>`).join('');
+
+  document.getElementById('membership-list').innerHTML = `
+    <div class="fellow-card" style="border-left-color:var(--navy)">
+      <div class="fellow-icon" style="background:var(--navy-l)">🔌</div>
+      <div><div class="fellow-title" style="color:var(--navy)">Senior Member <span class="fellow-year" style="background:var(--navy-l);color:var(--navy)">2002</span></div>
+      <div class="fellow-org">Institute of Electrical and Electronics Engineers (IEEE)</div></div>
+    </div>
+    <div class="fellow-card" style="border-left-color:var(--navy)">
+      <div class="fellow-icon" style="background:var(--navy-l)">🇪🇬</div>
+      <div><div class="fellow-title" style="color:var(--navy)">Member <span class="fellow-year" style="background:var(--navy-l);color:var(--navy)">2008</span></div>
+      <div class="fellow-org">Egyptian Engineers Syndicate, Cairo, Egypt</div></div>
+    </div>`;
+
+  document.getElementById('phd-topics').innerHTML = `
+    <p style="font-size:13.5px;color:var(--g700);margin-bottom:14px">Prof. Zobaa welcomes graduate students for research in power systems, energy & environment, smart grids, and engineering education. He has supervised <b>30+ PhD students</b> to successful completion.</p>
+    <ul style="list-style:none;padding:0">
+      ${PHD_TOPICS.map(t=>`<li style="padding:9px 14px;border-bottom:1px solid var(--g100);font-size:13.5px;display:flex;align-items:flex-start;gap:10px"><i class="fas fa-chevron-right" style="color:var(--maroon);font-size:11px;margin-top:3px;flex-shrink:0"></i>${t}</li>`).join('')}
+    </ul>`;
+}
+
+function renderRecentPubs() {
+  document.getElementById('recent-pubs').innerHTML = PUBS.slice(0,4).map(pubCard).join('');
+}
+
+function switchTab(name) {
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.top-bar nav a').forEach(a=>a.classList.remove('active'));
+  const btn=[...document.querySelectorAll('.tab-btn')].find(b=>b.getAttribute('onclick').includes(name));
+  if(btn)btn.classList.add('active');
+  const pane=document.getElementById('tab-'+name);
+  if(pane)pane.classList.add('active');
+}
+
+function animateCount(id,target,dec=0,delay=0){
+  setTimeout(()=>{
+    let start=0,dur=1300;
+    const el=document.getElementById(id);
+    if(!el)return;
+    const timer=setInterval(()=>{
+      start+=16;const p=Math.min(start/dur,1);const e=1-Math.pow(1-p,3);
+      el.textContent=dec?(target*e).toFixed(dec):Math.round(target*e);
+      if(p>=1){clearInterval(timer);el.textContent=dec?target.toFixed(dec):target}
+    },16);
+  },delay);
+}
+
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500)}
+function copyOrcid(){navigator.clipboard.writeText('0000-0001-5398-2384').then(()=>showToast('ORCID iD copied!'))}
+
+window.addEventListener('DOMContentLoaded',()=>{
+  renderPubs();
+  renderTimeline(EMPLOYMENT,'emp-timeline');
+  renderTimeline(EDUCATION,'edu-timeline');
+  renderResearch();
+  renderTeaching();
+  renderActivities();
+  renderRecentPubs();
+  animateCount('s-pubs',374,0,0);
+  animateCount('s-phd',30,0,100);
+  animateCount('s-fellow',8,0,200);
+  animateCount('s-grants',7,0,300);
+  animateCount('s-exp',33,0,400);
+});
+</script>
+</body>
+</html>
